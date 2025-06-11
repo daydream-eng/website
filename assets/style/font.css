@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Voxic';
+  src: url('../font/voxic.ttf')  format('truetype')
+}
+
+body {
+	font-family: "Voxic", system-ui;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2.5em;
+}
+
+h3 {
+	font-size: 2em;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+h5, h6, strong, b {
+	font-size: 1em;
+	letter-spacing: 0.125em;
+	text-shadow: 0.125em 0;
+}
+
+u, a {
+	text-decoration-thickness: 0.125em;
+	text-underline-offset: 0.125em;
+}
