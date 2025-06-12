@@ -4,6 +4,14 @@
 	padding: 0;
 }
 
+:root {
+	--accent: #FABF37;
+}
+
+::selection {
+	background-color: color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
 body {
 	background-image: url("../images/background.jpg");
 	background-position: center;
@@ -11,41 +19,235 @@ body {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 
+	background-color: black;
 	color: white;
 
+	--readable-padding: max(2rem, calc(50vw - 50rem));
+	--current-width: min(100vw - 4rem, 100rem);
+
+	& > * {
+		image-rendering: pixelated;
+	}
+}
+
+@media screen and (max-width: 80rem) {
+	body {
+		font-size: 0.75rem;
+	}
+}
+
+header {
+	max-width: max-content;
+	margin-inline: auto;
+	--vertical-align: max(2em, calc(30svh - 15em));
+	margin-top: calc(5em + var(--vertical-align));
+	margin-bottom: var(--vertical-align);
+	padding: 2em;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+
+}
+
+nav {
+	position: fixed;
+	z-index: 9999;
+	width: 100%;
+	top: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100svh;
-}
-
-main {
-	display: block;
-	padding: 4em;
-	margin: 2em;
+	gap: 2em;
+	padding: 1em 2em;
 
 	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background-pixelated.png");
-	image-rendering: pixelated;
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 
-	border: 0.25em solid rgba(255, 255, 255, 0.25);
+	border-bottom: 0.25em solid rgba(255, 255, 255, 0.25);
+
+	& > :has(.logo-image) {
+		margin-right: auto;
+	}
 }
 
-main > * + * {
-	margin-top: 1rem;
+main {
+	display: block;
+
+	background-image: linear-gradient(to top, rgba(16, 16, 16, 0.85), rgba(16, 16, 16, 0.85)), url("../images/background-pixelated.png");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+
+	box-shadow: 0 -0.5em 0 rgba(0, 0, 0, 0.25);
+
+	padding-block: 4em;
+
+}
+
+main > *,
+footer {
+	display: block;
+	padding-inline: var(--readable-padding);
+	margin-inline: auto;
+}
+
+main > * + *,
+footer > section > * + *,
+header > * + *,
+p > * {
+	margin-top: 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	margin-bottom: 2rem;
+	margin-bottom: 0.5em;
 }
 
 a {
-	color: #FABF37;
+	color: var(--accent);
+
+	&:hover {
+		color: #AAAAAA;
+		cursor: pointer;
+	}
+
+	&.button {
+		display: block;
+		max-width: max-content;
+		background-color: var(--accent);
+		color: black;
+		padding: 0.5em 2em;
+
+		outline: 0.25em solid rgba(0, 0, 0, 0.2);
+		border: 0.125em solid rgba(0, 0, 0, 0.6);
+		box-shadow: inset 0 -0.25em rgba(0, 0, 0, 0.2);
+
+		text-decoration: none;
+
+		&:hover {
+			background-color: white;
+		}
+
+		&:active {
+			background-color: var(--accent);
+			box-shadow: inset 0 0.25em rgba(0, 0, 0, 0.2);
+		}
+
+		&.jumbo {
+			padding: 1em 4em;
+			outline-width: 0.5em;
+			border-width: 0.25em;
+			box-shadow: inset 0 -0.5em rgba(0, 0, 0, 0.2);
+
+			&:active {
+				background-color: var(--accent);
+				box-shadow: inset 0 0.5em rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
 }
 
-a:hover {
-	color: #AAAAAA;
+footer {
+	background-image: linear-gradient(to top, rgba(4, 4, 4, 0.85), rgba(4, 4, 4, 0.85)), url("../images/background-pixelated.png");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	
+	box-shadow: inset 0 0.5em 0 rgba(0, 0, 0, 0.25);
+
+	display: grid;
+	align-items: end;
+	row-gap: 4em;
+
+	padding-block: 2em;
+
+	@media screen and (min-width: 80rem) {
+		grid-template-columns: 60% 40%;
+	}
+
+	& .logo-image {
+		filter: grayscale() brightness(2000%);
+	}
+
+	& > * {
+		width: 100%;
+		opacity: 0.8;
+
+		&:last-child {
+			text-align: right;
+		}
+	}
+}
+
+.logo-image {
+	height: 2.5em;
+}
+
+.gallery {
+	display: flex;
+	width: 100%;
+	padding: 0;
+	margin-block: 4em;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	scrollbar-width: none;
+
+	image-rendering: auto;
+
+	padding-block: 1em;
+
+	background-image: linear-gradient(to top, rgba(8, 8, 8, 0.85), rgba(8, 8, 8, 0.85)), url("../images/background-pixelated.png");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	
+	box-shadow:
+		inset 0 0.5em 0 rgba(0, 0, 0, 0.25),
+		inset 0 -0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+.gallery > * {
+	margin-left: 1em;
+	flex-shrink: 0;
+
+	&:first-child {
+		margin-left: calc(var(--readable-padding) + 4em);
+	}
+
+	&:last-child {
+		margin-right: calc(var(--readable-padding) + 4em);
+	}
+
+	& > img {
+		width: min(calc(var(--current-width) - 8em), 120svh);
+	}
+
+	position: relative;
+
+	&::before,
+	&::after {
+		content: "In-game capture. Graphics in development.";
+		position: absolute;
+		right: 2em;
+		bottom: 2em;
+	}
+
+	&::after {
+		mix-blend-mode: overlay;
+		opacity: 0.5;
+	}
+
+	&::before {
+		mix-blend-mode: screen;
+		color: #222;
+	}
 }
