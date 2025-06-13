@@ -1,0 +1,8 @@
+{
+	"aliases": {
+		"sitegen": "sitegen",
+		"util": "sitegen/util",
+		"template": "template",
+		"config": "config"
+	}
+}
