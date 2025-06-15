@@ -34,6 +34,15 @@
 	}
 }
 
+@keyframes nav-logo-darken-on-scroll {
+	from {
+		filter: var(--white-filter);
+	}
+	to {
+		filter: var(--no-white-filter);
+	}
+}
+
 ::selection {
 	background-color: color-mix(in srgb, var(--accent) 60%, transparent);
 }
@@ -94,7 +103,7 @@ nav {
 
 	background-color: var(--nav-bg);
 	animation: nav-bg-darken-on-scroll auto linear both;
-	animation-timeline: scroll();
+	animation-timeline: scroll(root);
     animation-range: 0% 20em;
 
 	& > :has(.logo-image) {
@@ -103,6 +112,13 @@ nav {
 		& + * {
 			margin-left: 1em;
 		}
+	}
+
+	& .logo-image {
+		filter: var(var(--no-white-filter));
+		animation: nav-logo-darken-on-scroll auto linear both;
+		animation-timeline: scroll(root);
+		animation-range: 0% 20em;
 	}
 
 	@media screen and (max-width: 40rem) {
@@ -273,7 +289,7 @@ footer {
 			text-align: right;
 
 			& > .logo-image {
-				filter: grayscale() brightness(2000%);
+				filter: var(--white-filter);
 			}
 		}
 	}
@@ -283,6 +299,8 @@ footer {
 	display: block;
 	height: 2em;
 	image-rendering: auto;
+	--white-filter: grayscale(100%) brightness(130%);
+	--no-white-filter: grayscale(0%) brightness(100%);
 }
 
 .gallery {
@@ -293,6 +311,7 @@ footer {
 	overflow-x: scroll;
 	overflow-y: hidden;
 	scrollbar-width: none;
+	scroll-snap-type: x mandatory;
 
 	image-rendering: auto;
 
@@ -340,6 +359,8 @@ footer {
 		}
 
 		& > img {
+			display: block;
+			scroll-snap-align: center;
 			--max-floating-width: min(90vw, 120svh);
 			width: min(var(--current-width), var(--max-floating-width));
 		}

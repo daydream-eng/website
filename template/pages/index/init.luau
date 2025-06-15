@@ -37,8 +37,8 @@ return function(
 						awesome. Live the adventures you've always wanted to play.",
 				images = {
 					{ src = site_url "assets/images/galleries/sunset_cave.jpg", alt = "A cave at golden hour" },
-					{ src = site_url "assets/images/galleries/cave.jpg", alt = "Magma lights up a huge cave" },
-					{ src = site_url "assets/images/galleries/forest_cliff.jpg", alt = "Cliffs tower over a forest" }
+					{ src = site_url "assets/images/galleries/forest_cliff.jpg", alt = "Cliffs tower over a forest" },
+					{ src = site_url "assets/images/galleries/cave.jpg", alt = "Magma lights up a huge cave" }
 				}
 			},
 			
