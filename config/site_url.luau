@@ -1,3 +1,3 @@
 return {
-	base = "/docs"
+	base = "https://ddre.am"
 }
