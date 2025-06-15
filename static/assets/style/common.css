@@ -56,7 +56,7 @@ body {
 	}
 }
 
-@media screen and (max-width: 80rem) {
+@media screen and (max-width: 60rem) {
 	body {
 		font-size: 0.75rem;
 	}
@@ -85,9 +85,11 @@ nav {
 	top: 0;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	gap: 1em;
 	padding: 1em 2em;
+
+	overflow-x: scroll;
+	scrollbar-width: none;
 
 	background-color: var(--nav-bg);
 	animation: nav-bg-darken-on-scroll auto linear both;
@@ -96,6 +98,14 @@ nav {
 
 	& > :has(.logo-image) {
 		margin-right: auto;
+	}
+
+	@media screen and (max-width: 40rem) {
+		& .logo-image {
+			aspect-ratio: 1/1;
+			object-fit: cover;
+			object-position: left;
+		}
 	}
 
 	& > .site-link {
@@ -246,22 +256,28 @@ footer {
 		grid-template-columns: 60% 40%;
 	}
 
-	& .logo-image {
-		filter: grayscale() brightness(2000%);
-	}
-
-	& > * {
+	& > section {
 		width: 100%;
 		opacity: 0.8;
 
-		&:last-child {
+		&:has(.logo-image) {
+			display: flex;
+			flex-direction: column;
+			align-items: end;
+			justify-content: end;
 			text-align: right;
+
+			& > .logo-image {
+				filter: grayscale() brightness(2000%);
+			}
 		}
 	}
 }
 
 .logo-image {
+	display: block;
 	height: 2.5em;
+	image-rendering: auto;
 }
 
 .gallery {
@@ -276,6 +292,9 @@ footer {
 	image-rendering: auto;
 
 	padding-block: 1em;
+	@media screen and (max-width: 80rem) {
+		padding-block: 0;
+	}
 
 	background-image: linear-gradient(to top, var(--gallery-bg), var(--gallery-bg)), var(--background-pixelated);
 	background-position: center;
@@ -286,41 +305,61 @@ footer {
 	box-shadow:
 		inset 0 0.5em 0 rgba(0, 0, 0, 0.25),
 		inset 0 -0.5em 0 rgba(0, 0, 0, 0.25);
-}
 
-.gallery > * {
-	margin-left: 1em;
-	flex-shrink: 0;
+	&:not(:has(:nth-child(2))) {
+		align-items: center;
+		justify-content: center;
 
-	&:first-child {
-		margin-left: calc(var(--readable-padding) + 4em);
+		@media screen and (max-width: 80rem) {
+			& > * > img {
+				width: 100vw;
+			}
+		}
 	}
 
-	&:last-child {
-		margin-right: calc(var(--readable-padding) + 4em);
-	}
+	& > * {
+		margin-left: 1em;
+		flex-shrink: 0;
 
-	& > img {
-		width: min(calc(var(--current-width) - 8em), 120svh);
-	}
+		&:first-child {
+			margin-left: var(--readable-padding);
+		}
+		&:last-child {
+			margin-right: var(--readable-padding);
+		}
+		@media screen and (max-width: 80rem) {
+			&:first-child,
+			&:last-child {
+				margin: 0;
+			}
+		}
 
-	position: relative;
+		& > img {
+			--max-floating-width: min(90vw, 120svh);
+			width: min(var(--current-width), var(--max-floating-width));
+		}
 
-	&::before,
-	&::after {
-		content: "In-game capture. Graphics in development.";
-		position: absolute;
-		right: 2em;
-		bottom: 2em;
-	}
+		position: relative;
 
-	&::after {
-		mix-blend-mode: overlay;
-		opacity: 0.5;
-	}
+		&::before,
+		&::after {
+			content: "In-game capture. Graphics in development.";
+			position: absolute;
+			left: 1em;
+			right: 1em;
+			bottom: 1em;
+			font-size: 0.75em;
+			text-align: right;
+		}
 
-	&::before {
-		mix-blend-mode: screen;
-		color: #222;
+		&::after {
+			mix-blend-mode: overlay;
+			opacity: 0.5;
+		}
+
+		&::before {
+			mix-blend-mode: screen;
+			color: #222;
+		}
 	}
 }
