@@ -58,7 +58,12 @@ body {
 	color: white;
 
 	--readable-padding: max(2rem, calc(50vw - 50rem));
-	--current-width: min(100vw - 4rem, 100rem);
+	--current-width: min(calc(100vw - 4rem), 100rem);
+
+	@media screen and (max-width: 80rem) {
+		--readable-padding: 1rem;
+		--current-width: calc(100vw - 2rem);
+	}
 
 	& > * {
 		image-rendering: pixelated;
@@ -287,7 +292,10 @@ footer {
 			align-items: end;
 			justify-content: end;
 			text-align: right;
-
+			gap: 0.5em;
+			& > p {
+				margin: 0;
+			}
 			& > .logo-image {
 				filter: var(--white-filter);
 			}

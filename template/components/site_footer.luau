@@ -9,7 +9,6 @@ local footer = html_box "footer"
 local section = html_box "section"
 local h3 = html_text "h3"
 local p = html_text "p"
-local br = html "br"
 
 return function(
 	props: {}
@@ -26,7 +25,6 @@ return function(
 		},
 		section {
 			logo {},
-			br {},
 			p "© Daniel P H Fox. All rights reserved."
 		}
 	}
