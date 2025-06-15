@@ -86,7 +86,8 @@ nav {
 	display: flex;
 	align-items: center;
 	gap: 1em;
-	padding: 1em 2em;
+	padding-block: 1em;
+	padding-inline: var(--readable-padding);
 
 	overflow-x: scroll;
 	scrollbar-width: none;
@@ -98,6 +99,10 @@ nav {
 
 	& > :has(.logo-image) {
 		margin-right: auto;
+
+		& + * {
+			margin-left: 1em;
+		}
 	}
 
 	@media screen and (max-width: 40rem) {
