@@ -1,26 +1,32 @@
+local html = require("@util/html")
 local html_text = require("@util/html_text")
+local html_box = require("@util/html_box")
 local site_url = require("@util/site_url")
 local common_urls = require("@config/common_urls")
 local document = require("@components/document")
 local button = require("@components/button")
-local gallery_with_prelude = require("@pages/about/gallery_with_prelude")
+local gallery_with_prelude = require("@pages/index/gallery_with_prelude")
 
 local h1 = html_text "h1"
+local h2 = html_text "h2"
 local p = html_text "p"
+local a = html "a"
+local p_box = html_box "p"
 
 return function(
 	props: {}
 )
 	return document {
-		site_nav = { current_page = "about" },
+		site_nav = { current_page = "index" },
+		background_name = "beach_cliff",
 		header = {
 			h1 "This is Daydream.",
 			p "Daydream is a casual, focused voxel survival game by Daniel P H Fox.",
 			p "Dig resources from the ground. Build out your base. Rinse, repeat.",
-			p "The engine is actively under development, and I'd love to show it to you.",
+			p "The engine is early in development, and I'd love to show it to you.",
 			button {
 				jumbo = true,
-				href = common_urls.news,
+				href = site_url "news",
 				text = "Get monthly updates"
 			}
 		},
@@ -61,7 +67,36 @@ return function(
 				images = {
 					{ src = site_url "assets/images/galleries/cave_light_beam.jpg", alt = "A patch of sunlight shines into a cave" }
 				}
-			}
+			},
+
+			h2 "Powered by the Daydream Engine.",
+			p "Daydream runs on the Daydream Engine - hyper-optimised for massive voxel worlds, high-quality graphics, \
+			   and real-time object interactions.",
+			p "Play the full Daydream experience on a wide range of hardware, including dedicated Steam Deck support \
+			   for casual play on-the-go.",
+
+			h2 "Follow along with development.",
+			p_box {
+				"Daydream is being developed openly ",
+				a {
+					href = common_urls.youtube_development_series,
+					text = "as part of a YouTube series"
+				},
+				" and you can ",
+				a {
+					href = site_url "news",
+					text = "get monthly updates to your inbox"
+				},
+				"."
+			},
+			p_box {
+				"Want an early peek at what's in store, or learn more about the process?",
+				button {
+					href = site_url "dev",
+					text = "How Daydream is developed"
+				}
+			},
+			
 		}
 	}
 end

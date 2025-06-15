@@ -7,7 +7,7 @@ local site_footer = require("@components/site_footer")
 
 local root = html "html"
 local head = html_box "head"
-local body = html_box "body"
+local body = html "body"
 local meta = html "meta"
 local title = html_text "title"
 local link = html "link"
@@ -20,6 +20,8 @@ return function(
 		site_nav: {
 			current_page: string?
 		},
+		extra_head: html.Child?,
+		background_name: string,
 		header: html.Child,
 		main: html.Child
 	}
@@ -37,13 +39,18 @@ return function(
 
 					link { rel = "icon", href = site_url "assets/images/icon.png", type = "image/png" },
 					link { rel = "stylesheet", href = site_url "assets/style/font.css" },
-					link { rel = "stylesheet", href = site_url "assets/style/common.css" }
+					link { rel = "stylesheet", href = site_url "assets/style/common.css" },
+
+					props.extra_head
 				},
 				body {
-					site_nav { current_page = props.site_nav.current_page },
-					header (props.header),
-					main (props.main),
-					site_footer {}
+					style = `--background: url('../images/backgrounds/{props.background_name}.jpg'); --background-pixelated: url('../images/backgrounds/{props.background_name}-pixelated.png');`,
+					children = {
+						site_nav { current_page = props.site_nav.current_page },
+						header (props.header),
+						main (props.main),
+						site_footer {}
+					}
 				}
 			}
 		}

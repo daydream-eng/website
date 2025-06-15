@@ -1,0 +1,6 @@
+.newsletter-signup {
+	display: flex;
+	gap: 1em;
+	width: 100vw;
+	max-width: 40em;
+}
