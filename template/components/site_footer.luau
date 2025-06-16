@@ -1,4 +1,3 @@
-local html = require("@util/html")
 local html_box = require("@util/html_box")
 local html_text = require("@util/html_text")
 local site_url = require("@util/site_url")

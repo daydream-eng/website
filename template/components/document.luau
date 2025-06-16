@@ -4,6 +4,7 @@ local html_box = require("@util/html_box")
 local site_url = require("@util/site_url")
 local site_nav = require("@components/site_nav")
 local site_footer = require("@components/site_footer")
+local compatibility_warning = require("@components/compatibility_warning")
 
 local root = html "html"
 local head = html_box "head"
@@ -46,6 +47,7 @@ return function(
 				body {
 					style = `--background: url('../images/backgrounds/{props.background_name}.jpg'); --background-pixelated: url('../images/backgrounds/{props.background_name}-pixelated.png');`,
 					children = {
+						compatibility_warning {},
 						site_nav { current_page = props.site_nav.current_page },
 						header (props.header),
 						main (props.main),

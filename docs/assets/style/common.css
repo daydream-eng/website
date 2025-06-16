@@ -12,10 +12,6 @@
 	--footer-bg: rgba(4, 4, 4, 0.95);
 	--gallery-bg: rgba(8, 8, 8, 0.95);
 
-	@supports (color: color(display-p3 0, 0, 0)) {
-		--accent: color(display-p3 0.98, 0.75, 0.21);
-	}
-
 	--cursor-neutral: url("../images/cursors/neutral.png") 0 0, default;
 	--cursor-hand-point: url("../images/cursors/hand-point.png") 8 0, pointer;
 	--cursor-text-input: url("../images/cursors/text-input.png") 4 14, text;
@@ -23,6 +19,38 @@
 
 	--background: url("../images/backgrounds/cave.jpg");
 	--background-pixelated: url("../images/backgrounds/cave-pixelated.png");
+}
+
+@supports (background-color: color(display-p3 0.98, 0.75, 0.21)) {
+	:root {
+		--accent: color(display-p3 0.98, 0.75, 0.21);
+	}
+}
+
+.compatibility-warning {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 8em;
+	padding-top: 5em;
+	background-color: #a00;
+	font: 1em/1 sans-serif;
+	font-weight: bold;
+}
+
+body {
+	--disable-compatibility-warning: none;
+	& .compatibility-warning {
+		@supports (background-image: linear-gradient(to top, var(--main-bg), var(--main-bg)), var(--background-pixelated)) {
+			@media all and (min-width: 1px) {
+				display: var(--disable-compatibility-warning);
+			}
+		}
+		@supports not (background-image: linear-gradient(to top, var(--main-bg), var(--main-bg)), var(--background-pixelated)) {
+			display: flex !important;
+		}
+	}
 }
 
 @keyframes nav-bg-darken-on-scroll {
