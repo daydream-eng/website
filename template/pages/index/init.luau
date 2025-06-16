@@ -20,9 +20,9 @@ return function(
 		site_nav = { current_page = "index" },
 		background_name = "beach_cliff",
 		header = {
-			h1 "This is Daydream.",
-			p "Daydream is a casual, focused voxel survival game by Daniel P H Fox.",
-			p "Dig resources from the ground. Build out your base. Rinse, repeat.",
+			h1 "A subterranea of your own.",
+			p "Daydream is a casual voxel cave exploration game by Daniel P H Fox.",
+			p "Pick resources from the ground. Expand your base. Go down and grow out.",
 			p "The engine is early in development, and I'd love to show it to you.",
 			button {
 				jumbo = true,

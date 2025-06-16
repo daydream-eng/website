@@ -156,7 +156,7 @@ nav {
 
 	@media screen and (max-width: 40rem) {
 		& .logo-image {
-			aspect-ratio: 1/1;
+			aspect-ratio: 16/20;
 			object-fit: cover;
 			object-position: left;
 		}
@@ -333,7 +333,7 @@ footer {
 
 .logo-image {
 	display: block;
-	height: 2em;
+	height: 2.5em;
 	image-rendering: auto;
 	--white-filter: grayscale(100%) brightness(130%);
 	--no-white-filter: grayscale(0%) brightness(100%);
