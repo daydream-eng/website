@@ -38,7 +38,8 @@ return function(
 
 					title ((if props.title == nil then "" else (props.title .. " - ")) .. "Daydream"),
 
-					link { rel = "icon", href = site_url "assets/images/icon.png", type = "image/png" },
+					link { rel = "icon", href = site_url "assets/images/icon-light.png", type = "image/png", media = "(prefers-color-scheme: light)" },
+					link { rel = "icon", href = site_url "assets/images/icon-dark.png", type = "image/png", media = "(prefers-color-scheme: dark)" },
 					link { rel = "stylesheet", href = site_url "assets/style/font.css" },
 					link { rel = "stylesheet", href = site_url "assets/style/common.css" },
 
