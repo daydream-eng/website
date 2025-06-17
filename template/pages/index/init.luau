@@ -21,7 +21,7 @@ return function(
 		background_name = "beach_cliff",
 		header = {
 			h1 "A subterranea of your own.",
-			p "Daydream is a casual voxel cave exploration game by Daniel P H Fox.",
+			p "Daydream is a peaceful voxel caving & building game by Daniel P H Fox.",
 			p "Pick resources from the ground. Expand your base. Go down and grow out.",
 			p "The engine is early in development, and I'd love to show it to you.",
 			button {
