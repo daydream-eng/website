@@ -6,6 +6,7 @@ local common_urls = require("@config/common_urls")
 local document = require("@components/document")
 local button = require("@components/button")
 local gallery_with_prelude = require("@pages/index/gallery_with_prelude")
+local gallery = require("@components/gallery")
 
 local h1 = html_text "h1"
 local h2 = html_text "h2"
@@ -20,10 +21,11 @@ return function(
 		site_nav = { current_page = "index" },
 		background_name = "beach_cliff",
 		header = {
-			h1 "A subterranea of your own.",
-			p "Daydream is a peaceful voxel caving & building game by Daniel P H Fox.",
-			p "Pick resources from the ground. Expand your base. Go down and grow out.",
-			p "The engine is early in development, and I'd love to show it to you.",
+			h1 "Dig down, build out, craft up.",
+			p "Get creative with your tools to navigate impossibly deep caves, master environmental hazards, and \
+				discover a lonely overworld.",
+			p "Plant your stake by building an ever-evolving base of operations, and thrive by unfolding multiple \
+				rich, complex crafting progressions.",
 			button {
 				jumbo = true,
 				href = site_url "news",
@@ -31,10 +33,17 @@ return function(
 			}
 		},
 		main = {
-			gallery_with_prelude {
-				title = "Your dream worlds.",
-				desc = "Explore an infinite world full of exciting terrain and impossibly deep caves - tuned to be \
-						awesome. Live the adventures you've always wanted to play.",
+			h2 "Your dream worlds.",
+			p "Explore an infinite world full of exciting terrain and sprawling 3D networks of caves. Master the \
+				massive subterranea and its extreme shapes, tuned to generate fantastical chambers filled with \
+				stunning magma pools and eye-catching resources.",
+				
+			h2 "Grow from simple roots.",
+			p "Plant your stake with an ever-evolving base of operations, built from the blocks you find in the world. \
+				Assemble a creative range of workstations to unfold multipe rich, complex crafting progressions. \
+				Expand your abilities by investing in tools that change the way you interact with the world.",
+
+			gallery {
 				images = {
 					{ src = site_url "assets/images/galleries/sunset_cave.jpg", alt = "A cave at golden hour" },
 					{ src = site_url "assets/images/galleries/forest_cliff.jpg", alt = "Cliffs tower over a forest" },
@@ -42,36 +51,33 @@ return function(
 				}
 			},
 			
-			gallery_with_prelude {
-				title = "Grow from simple roots.",
-				desc = "Plant your stake with an ever-evolving base of operations. Use a creative range of \
-						workstations to unfold multiple engaging crafting progressions.",
-				images = {
-					{ src = site_url "assets/images/galleries/looking-out-cave.jpg", alt = "Looking out from a cave entrance" }
-				}
-			},
+			h2 "Think on your feet.",
+			p "Everything interacts. Use blocks, material interactions, and physics to master environmental hazards \
+				and navigate a world that's larger than you. Keep your eyes open and select your tools wisely to adapt \
+				to any situation you find yourself in.",
+				
+			h2 "Shape your creations.",
+			p "Use smaller, more detailed blocks to build anything you can imagine. Paint the world in coloured \
+				lighting that realistically mixes with every surface. Mix-and-match blocks in ways you've never done \
+				before, with multiple objects per block.",
 			
-			gallery_with_prelude {
-				title = "Think on your feet.",
-				desc = "Everything interacts. Use blocks, material interactions, and physics to master \
-						environmental hazards and navigate a world that's larger than you.",
+			gallery {
 				images = {
-					{ src = site_url "assets/images/galleries/sunny_hills.jpg", alt = "Steep hils bathed in afternoon sun" }
-				}
-			},
-			
-			gallery_with_prelude {
-				title = "Shape your creations.",
-				desc = "Use smaller, more detailed blocks to build anything you can imagine. Paint the world in \
-						coloured lighting that realistically mixes with every surface.",
-				images = {
-					{ src = site_url "assets/images/galleries/cave_light_beam.jpg", alt = "A patch of sunlight shines into a cave" }
+					{ src = site_url "assets/images/galleries/sunny_hills.jpg", alt = "Steep hils bathed in afternoon sun" },
+					{ src = site_url "assets/images/galleries/looking-out-cave.jpg", alt = "Looking out from a cave entrance" },
+					{ src = site_url "assets/images/galleries/cave_light_beam.jpg", alt = "A patch of sunlight shines into a cave" },
 				}
 			},
 
 			h2 "Powered by the Daydream Engine.",
-			p "Daydream runs on the Daydream Engine - hyper-optimised for massive voxel worlds, high-quality graphics, \
-			   and real-time object interactions.",
+			p_box {
+				"Daydream runs on the ",
+				a {
+					href = site_url "development",
+					text = "Daydream Engine"
+				}, 
+				" - hyper-optimised for massive voxel worlds, high-quality graphics, and real-time object interactions.",
+			},
 			p "Play the full Daydream experience on a wide range of hardware, including dedicated Steam Deck support \
 			   for casual play on-the-go.",
 
