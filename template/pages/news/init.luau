@@ -29,8 +29,8 @@ return function(
 			script { defer = true, src = site_url "assets/scripts/newsletter_signup.js" }
 		},
 		header = if props.page_type == "success" then {
-			h1 "You're in!",
-			p "Thanks for joining the newsletter. Enjoy your updates!",
+			h1 "Check your email!",
+			p "You should receive a confirmation email shortly - welcome to the club!",
 		} elseif props.page_type == "fail" then {
 			h1 "Something went wrong.",
 			p "But don't worry - you can try again below.",
