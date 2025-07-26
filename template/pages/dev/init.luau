@@ -13,7 +13,7 @@ return function(
 )
 	return document {
 		site_nav = { current_page = "dev" },
-		background_name = "cave",
+		background_name = "aerial_cave",
 		header = {
 			h1 "Let's build voxels together!",
 			p "I'm broadcasting the process of building Daydream (and its engine!)",

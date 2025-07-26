@@ -19,7 +19,7 @@ return function(
 )
 	return document {
 		site_nav = { current_page = "index" },
-		background_name = "beach_cliff",
+		background_name = "blocks_closeup",
 		header = {
 			h1 "Dig down, build out, craft up.",
 			p "Get creative with your tools to navigate impossibly deep caves, master environmental hazards, and \
@@ -45,9 +45,9 @@ return function(
 
 			gallery {
 				images = {
-					{ src = site_url "assets/images/galleries/sunset_cave.jpg", alt = "A cave at golden hour" },
-					{ src = site_url "assets/images/galleries/forest_cliff.jpg", alt = "Cliffs tower over a forest" },
-					{ src = site_url "assets/images/galleries/cave.jpg", alt = "Magma lights up a huge cave" }
+					{ src = site_url "assets/images/galleries/morning_lake.jpg", alt = "A lake in the morning light" },
+					{ src = site_url "assets/images/galleries/deep_cave.jpg", alt = "A deep cave lit by offscreen magma" },
+					{ src = site_url "assets/images/galleries/water_reflection.jpg", alt = "Water reflecting a shore and cliff face" }
 				}
 			},
 			
@@ -63,9 +63,9 @@ return function(
 			
 			gallery {
 				images = {
-					{ src = site_url "assets/images/galleries/sunny_hills.jpg", alt = "Steep hils bathed in afternoon sun" },
-					{ src = site_url "assets/images/galleries/looking-out-cave.jpg", alt = "Looking out from a cave entrance" },
-					{ src = site_url "assets/images/galleries/cave_light_beam.jpg", alt = "A patch of sunlight shines into a cave" },
+					{ src = site_url "assets/images/galleries/cave_looking_out.jpg", alt = "Looking out from a cave entrance" },
+					{ src = site_url "assets/images/galleries/beach_sunset.jpg", alt = "A beach at sunset" },
+					{ src = site_url "assets/images/galleries/morning_cliff.jpg", alt = "Steep hills bathed in morning sun" }
 				}
 			},
 

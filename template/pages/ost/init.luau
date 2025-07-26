@@ -17,7 +17,7 @@ return function(
 )
 	return document {
 		site_nav = { current_page = "ost" },
-		background_name = "ravine",
+		background_name = "morning_tree",
 		header = {
 			h1 "Music to spelunk to.",
 			p "Listen to some demos from the in-development Daydream OST!",

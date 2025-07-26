@@ -21,7 +21,7 @@ return function(
 )
 	return document {
 		site_nav = { current_page = "news" },
-		background_name = "forest",
+		background_name = "underwater",
 		extra_head = {
 			link { rel = "stylesheet", href = site_url "assets/style/newsletter_signup.css" },
 			link { id = "newsletter-error-page", href = site_url "news/fail" },
