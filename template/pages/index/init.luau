@@ -73,7 +73,7 @@ return function(
 			p_box {
 				"Daydream runs on the ",
 				a {
-					href = site_url "development",
+					href = site_url "dev",
 					text = "Daydream Engine"
 				}, 
 				" - hyper-optimised for massive voxel worlds, high-quality graphics, and real-time object interactions.",
