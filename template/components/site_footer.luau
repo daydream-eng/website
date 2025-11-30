@@ -15,7 +15,7 @@ return function(
 	return footer {
 		section {
 			h3 "Satisfy your curiosity.",
-			p "Get monthly updates on Daydream, with tips and deep discussion.",
+			p "Get monthly updates on Cavey, with tips and deep discussion.",
 			p "And maybe even a few exclusives, just for you. ;)",
 			button {
 				href = site_url "news",

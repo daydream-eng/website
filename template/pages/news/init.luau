@@ -42,15 +42,15 @@ return function(
 			newsletter_signup {}
 		} else {
 			h1 "From my email to yours.",
-			p "The monthly newsletter is the easiest way to keep up to date with Daydream.",
+			p "The monthly newsletter is the easiest way to keep up to date with Cavey.",
 			p "Enjoy tips, discussion and - just maybe - some exclusives :)",
 			p "Joining is 100% free and takes only a few seconds. Be curious!",
 			newsletter_signup {}
 		},
 		main = {
-			h2 "Get closer to Daydream!",
-			p "Excited about Daydream, and wish you could get your hands on it? Then, the monthly newsletter is the \
-				place to be. It's everything current with Daydream, all in one place, right in your inbox - and there's \
+			h2 "Get closer to Cavey!",
+			p "Excited about Cavey, and wish you could get your hands on it? Then, the monthly newsletter is the \
+				place to be. It's everything current with Cavey, all in one place, right in your inbox - and there's \
 				plenty to get excited about.",
 
 			h3 "See the process as it is.",
@@ -62,13 +62,13 @@ return function(
 			p "(Also, it doesn't take six months between uploads - bonus.)",
 			
 			h3 "Get pointed at cool stuff.",
-			p "Sometimes there's cool things out in the world that the Daydreamers should know about. For example, \
+			p "Sometimes there's cool things out in the world that Cavey fans should know about. For example, \
 				there's tons of great voxel projects out there, or perhaps some thought provoking YouTube analysis. \
 				I would love to share that!",
-			p "WIth the Daydream newsletter, you get a little portal into the incredible world around Daydream, too.",
+			p "WIth the Cavey newsletter, you get a little portal into the incredible world around Cavey, too.",
 
 			h3 "Extra treats.",
-			p "As a special thank-you for being part of the Daydream community and following along throughout \
+			p "As a special thank-you for being part of the Cavey community and following along throughout \
 				development, I'd like to extend a few exciting opportunities down-the-line, just for the newsletter.",
 			p "What exactly, you ask? Only one way to find out!",
 		}

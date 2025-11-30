@@ -1,6 +1,6 @@
-local fs = require("@lune/fs" :: any)
-local task = require("@lune/task" :: any)
-local process = require("@lune/process" :: any)
+local fs = require("@lune/fs")
+local task = require("@lune/task")
+local process = require("@lune/process")
 
 local watch_paths = {}
 
@@ -67,7 +67,7 @@ while true do
 		for _ = 1, 80 do
 			print()
 		end
-		local result = process.spawn("lune", { "run", "sitegen/lune" })
+		local result = process.exec("lune", { "run", "sitegen/lune" })
 		if result.ok then
 			print("Build OK")
 		else

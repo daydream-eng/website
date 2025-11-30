@@ -6,8 +6,12 @@
 }
 
 :root {
-	--accent: #fabf36;
-	--nav-bg: rgba(4, 4, 4, 0.9);
+	--accent: rgb(250, 191, 54);
+	--accent: color(display-p3 0.98 0.75 0.21);
+	--accent-2: rgb(230, 171, 34);
+	--accent-2: color(display-p3 0.90 0.67 0.125);
+
+	--nav-bg: rgba(0, 0, 0, 1.0);
 	--main-bg: rgba(16, 16, 16, 0.9);
 	--footer-bg: rgba(4, 4, 4, 0.95);
 	--gallery-bg: rgba(8, 8, 8, 0.95);
@@ -60,24 +64,6 @@ body {
 	}
 }
 
-@keyframes nav-bg-darken-on-scroll {
-	from {
-		background-color: transparent;
-	}
-	to {
-		background-color: var(--nav-bg);
-	}
-}
-
-@keyframes nav-logo-darken-on-scroll {
-	from {
-		filter: var(--white-filter);
-	}
-	to {
-		filter: var(--no-white-filter);
-	}
-}
-
 ::selection {
 	background-color: color-mix(in srgb, var(--accent) 60%, transparent);
 }
@@ -127,6 +113,16 @@ header {
 	text-align: center;
 }
 
+body > header > *,
+body > nav > * {
+	text-shadow:
+		0 0.125em rgba(0, 0, 0, 0.25),
+		0.125em 0 rgba(0, 0, 0, 0.125),
+		-0.125em 0 rgba(0, 0, 0, 0.125),
+		0.125em 0.125em rgba(0, 0, 0, 0.125),
+		-0.125em 0.125em rgba(0, 0, 0, 0.125);
+}
+
 nav {
 	position: fixed;
 	z-index: 9999;
@@ -141,31 +137,13 @@ nav {
 	overflow-x: scroll;
 	scrollbar-width: none;
 
-	background-color: var(--nav-bg);
-	animation: nav-bg-darken-on-scroll auto linear both;
-	animation-timeline: scroll(root);
-    animation-range: 0% 20em;
+	background: linear-gradient(to bottom, var(--nav-bg), transparent);
 
 	& > :has(.logo-image) {
 		margin-right: auto;
 
 		& + * {
 			margin-left: 1em;
-		}
-	}
-
-	& .logo-image {
-		filter: var(var(--no-white-filter));
-		animation: nav-logo-darken-on-scroll auto linear both;
-		animation-timeline: scroll(root);
-		animation-range: 0% 20em;
-	}
-
-	@media screen and (max-width: 40rem) {
-		& .logo-image {
-			aspect-ratio: 16/20;
-			object-fit: cover;
-			object-position: left;
 		}
 	}
 
@@ -229,9 +207,14 @@ a {
 
 a.button,
 button {
+	--button-1: var(--accent);
+	--button-2: var(--accent-2);
+
 	display: block;
 	max-width: max-content;
-	background-color: var(--accent);
+	background-color: transparent;
+	background-image: linear-gradient(to bottom, var(--button-1) 49.9%, var(--button-2) 51.1%);
+	background-repeat: no-repeat;
 	--focus-color: white;
 	color: black;
 	padding: 0.5em 2em;
@@ -240,21 +223,25 @@ button {
 
 	border: 0.125em solid rgba(0, 0, 0, 0.6);
 	box-shadow: inset 0 -0.25em rgba(0, 0, 0, 0.2);
+	text-shadow: 0 0.125em var(--button-1), 0 -0.125em var(--button-2);
 
 	text-decoration: none;
 
 	&:hover:not(:disabled) {
-		background-color: white;
+		--button-1: #fff;
+		--button-2: #eee;
 	}
 
 	&:active:not(:disabled) {
-		background-color: var(--accent);
+		--button-1: var(--accent-2);
+		--button-2: var(--accent);
 		box-shadow: inset 0 0.25em rgba(0, 0, 0, 0.2);
 	}
 
 	&[disabled] {
 		box-shadow: none;
-		background: none;
+		--button-1: transparent;
+		--button-2: transparent;
 		color: white;
 		border-color: white;
 		border-style: dashed;
@@ -263,13 +250,10 @@ button {
 
 	&.jumbo {
 		padding: 1em 4em;
-		border-width: 0.25em;
-		box-shadow: inset 0 -0.5em rgba(0, 0, 0, 0.2);
-		outline-width: 0.25em;
+		box-shadow: inset 0 -0.25em rgba(0, 0, 0, 0.2);
 
 		&:active:not(:disabled) {
-			background-color: var(--accent);
-			box-shadow: inset 0 0.5em rgba(0, 0, 0, 0.2);
+			box-shadow: inset 0 0.25em rgba(0, 0, 0, 0.2);
 		}
 	}
 }
@@ -343,7 +327,7 @@ footer {
 
 .logo-image {
 	display: block;
-	height: 2.5em;
+	height: 3.75em;
 	image-rendering: auto;
 	--white-filter: grayscale(100%) brightness(130%);
 	--no-white-filter: grayscale(0%) brightness(100%);

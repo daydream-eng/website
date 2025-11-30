@@ -13,10 +13,10 @@ return function(
 )
 	return document {
 		site_nav = { current_page = "dev" },
-		background_name = "aerial_cave",
+		background_name = "blocks_closeup",
 		header = {
 			h1 "Let's build voxels together!",
-			p "I'm broadcasting the process of building Daydream (and its engine!)",
+			p "I'm broadcasting the process of building Cavey (and its engine!)",
 			p "Join me on my YouTube channel for occasional updates and explainers.",
 			button {
 				jumbo = true,
@@ -25,8 +25,8 @@ return function(
 			}
 		},
 		main = {
-			h2 "Introducing the Daydream Engine.",
-			p "The Daydream Engine takes complete control of the game tech stack, from interfacing with rendering APIs \
+			h2 "Introducing the Cavey Engine.",
+			p "The Cavey Engine takes complete control of the game tech stack, from interfacing with rendering APIs \
 				to simulating gameplay.",
 			
 			h3 "Modern, fast, scalable.",
@@ -35,19 +35,19 @@ return function(
 			p "All other engine processes are massively multi-threaded, including fully deterministic & fully parallel \
 				world generation to take full advantage of modern multi-core CPUs, and an asynchronous tick loop for \
 				regularly scheduled updates.",
-			p "Unlike other engines, the Daydream Engine minimises lock time by maintaining synchronised structures \
+			p "Unlike other engines, the Cavey Engine minimises lock time by maintaining synchronised structures \
 				across threads where sensible. This means that each process can run as independently as possible \
 				without waiting for other processing to release resources.",
-			p "As a cherry on top, the Daydream Engine is written in Rust, one of the lowest overhead languages \
+			p "As a cherry on top, the Cavey Engine is written in Rust, one of the lowest overhead languages \
 				available today.",
 
 			h3 "Your computer can run it.",
-			p "The Daydream Engine does not target high-end hardware. Instead, mid-range hardware is Daydream's target \
-				spec, with progressive enhancements on top. The core Daydream experience can be taken almost anywhere \
+			p "The Cavey Engine does not target high-end hardware. Instead, mid-range hardware is Cavey's target \
+				spec, with progressive enhancements on top. The core Cavey experience can be taken almost anywhere \
 				you play, without relying on upsampling or frame generation.",
-			p "What's more, the Daydream Engine is built to be cross-platform, including Vulkan support and a Linux \
+			p "What's more, the Cavey Engine is built to be cross-platform, including Vulkan support and a Linux \
 				native version.",
-			p "In particular, Daydream development natively targets a Steam Deck OLED at full resolution and refresh \
+			p "In particular, Cavey development natively targets a Steam Deck OLED at full resolution and refresh \
 				rate when benchmarking performance, to ensure that most full-power hardware can enjoy a rock-solid \
 				experience."
 		}

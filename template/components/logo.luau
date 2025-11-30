@@ -9,6 +9,6 @@ return function(
 	return img {
 		class = "logo-image",
 		src = site_url "assets/images/logo.png",
-		alt = "Daydream"
+		alt = "Cavey"
 	}
 end

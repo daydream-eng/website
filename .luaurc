@@ -1,8 +1,9 @@
 {
-	"aliases": {
-		"sitegen": "sitegen",
-		"util": "sitegen/util",
-		"template": "template",
-		"config": "config"
-	}
+  "aliases": {
+    "sitegen": "sitegen",
+    "util": "sitegen/util",
+    "template": "template",
+    "config": "config",
+    "lune": "~/.lune/.typedefs/0.10.4/"
+  }
 }

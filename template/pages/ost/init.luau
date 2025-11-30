@@ -20,7 +20,7 @@ return function(
 		background_name = "morning_tree",
 		header = {
 			h1 "Music to spelunk to.",
-			p "Listen to some demos from the in-development Daydream OST!",
+			p "Listen to some demos from the in-development Cavey OST!",
 			p "Ambient, gentle tunes paying homage to classic soundtracks.",
 			button {
 				jumbo = true,
@@ -31,7 +31,7 @@ return function(
 		main = {
 			h2 "New sound, classic tone.",
 			p_box {
-				"The Daydream OST blends together FM synths and analogue sounds with acoustic instruments, to create \
+				"The Cavey OST blends together FM synths and analogue sounds with acoustic instruments, to create \
 				an overall sound inspired by the earlier pioneering musical work of ",
 				a {
 					href = "https://c418.org/",
@@ -44,15 +44,15 @@ return function(
 				that both amplifies every environment you're in, and lets you zone out as you play.",
 			
 			h3 "Quiet when it needs to be.",
-			p "The Daydream OST is defined by silent moments as much as its music. Instead of running continuous mixes \
-				of music as you play, Daydream aims to lean into the sound of the world around you, building up loops \
+			p "The Cavey OST is defined by silent moments as much as its music. Instead of running continuous mixes \
+				of music as you play, Cavey aims to lean into the sound of the world around you, building up loops \
 				and foley to create a world that's sonically alive without taking up space.",
-			p "Further, Daydream's OST contains many 'interjections' - gentle, low volume musical motifs that stand on \
+			p "Further, Cavey's OST contains many 'interjections' - gentle, low volume musical motifs that stand on \
 				their own without the backing of a full song. Interjections are designed to finely dust music onto \
 				scenes, allowing a sparser soundtrack without becoming completely silent.",
 
 			h3 "Reflective of the world around you.",
-			p "Daydream will sport a dynamic music director to gently guide song selections as you play. Based on your \
+			p "Cavey will sport a dynamic music director to gently guide song selections as you play. Based on your \
 				current surroundings, you'll hear music which evokes different tones and timbres to emphasise where \
 				you are at each moment.",
 			p "As you explore the depths, you'll hear warmer, contemplative pads and moodier synths. When you return, \

@@ -1,10 +1,10 @@
-local fs = require("@lune/fs" :: any)
-local process = require("@lune/process" :: any)
+local fs = require("@lune/fs")
+local process = require("@lune/process")
 
 local function fix_one(
 	path: string
 )
-	local result = process.spawn("magick", {
+	local result = process.exec("magick", {
 		path,
 		"+profile",
 		"*",

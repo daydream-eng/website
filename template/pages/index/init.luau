@@ -19,29 +19,27 @@ return function(
 )
 	return document {
 		site_nav = { current_page = "index" },
-		background_name = "blocks_closeup",
+		background_name = "aerial_cave",
 		header = {
 			h1 "Dig down, build out, craft up.",
-			p "Get creative with your tools to navigate impossibly deep caves, master environmental hazards, and \
-				discover a lonely overworld.",
-			p "Plant your stake by building an ever-evolving base of operations, and thrive by unfolding multiple \
-				rich, complex crafting progressions.",
+			p "Get creative with your tools to mine impossibly deep caves, and manoeuvre to master environmental hazards.",
+			p "Build an ever-evolving base of operations in a peaceful extravagant overworld, and thrive by unfolding rich, complex crafting progressions.",
 			button {
 				jumbo = true,
 				href = site_url "news",
-				text = "Get monthly updates"
+				text = "Get monthly news updates"
 			}
 		},
 		main = {
-			h2 "Your dream worlds.",
-			p "Explore an infinite world full of exciting terrain and sprawling 3D networks of caves. Master the \
-				massive subterranea and its extreme shapes, tuned to generate fantastical chambers filled with \
-				stunning magma pools and eye-catching resources.",
+			h2 "Two layers interwoven.",
+			p "Explore a gorgeous infinite world full of exciting terrain and sprawling 3D networks of caves. \
+			Beneath the surface, master the massive subterranea and its extreme shapes, \
+			tuned to generate fantastical chambers filled with stunning magma pools and eye-catching resources.",
 				
-			h2 "Grow from simple roots.",
+			h2 "Survive and thrive.",
 			p "Plant your stake with an ever-evolving base of operations, built from the blocks you find in the world. \
-				Assemble a creative range of workstations to unfold multipe rich, complex crafting progressions. \
-				Expand your abilities by investing in tools that change the way you interact with the world.",
+			Assemble a creative range of workstations to unfold multiple rich, complex crafting progressions. \
+			Expand your abilities by investing in tools that change the way you interact with the world.",
 
 			gallery {
 				images = {
@@ -52,14 +50,14 @@ return function(
 			},
 			
 			h2 "Think on your feet.",
-			p "Everything interacts. Use blocks, material interactions, and physics to master environmental hazards \
-				and navigate a world that's larger than you. Keep your eyes open and select your tools wisely to adapt \
-				to any situation you find yourself in.",
+			p "Everything interacts. Use clever blocks, movement and material interactions \
+			to master environmental hazards and navigate a world that's larger than you. \
+			Keep your eyes open and select your tools wisely to adapt to any situation you find yourself in.",
 				
 			h2 "Shape your creations.",
-			p "Use smaller, more detailed blocks to build anything you can imagine. Paint the world in coloured \
-				lighting that realistically mixes with every surface. Mix-and-match blocks in ways you've never done \
-				before, with multiple objects per block.",
+			p "Use smaller, more detailed blocks to build anything you can imagine. \
+			Paint the world in coloured lighting that realistically mixes with every surface. \
+			Mix-and-match blocks in ways you've never done before, with multiple objects per block.",
 			
 			gallery {
 				images = {
@@ -69,21 +67,21 @@ return function(
 				}
 			},
 
-			h2 "Powered by the Daydream Engine.",
+			h2 "Powered by the Cavey Engine.",
 			p_box {
-				"Daydream runs on the ",
+				"Cavey runs on the fully custom-built ",
 				a {
 					href = site_url "dev",
-					text = "Daydream Engine"
+					text = "Cavey Engine"
 				}, 
-				" - hyper-optimised for massive voxel worlds, high-quality graphics, and real-time object interactions.",
+				" - hyper-optimised for massive voxel worlds, high-quality graphics, and real-time low latency interactions.",
 			},
-			p "Play the full Daydream experience on a wide range of hardware, including dedicated Steam Deck support \
+			p "Play the full Cavey experience on a wide range of hardware, including dedicated Steam Deck support \
 			   for casual play on-the-go.",
 
 			h2 "Follow along with development.",
 			p_box {
-				"Daydream is being developed openly ",
+				"Cavey is being developed openly ",
 				a {
 					href = common_urls.youtube_development_series,
 					text = "as part of a YouTube series"
@@ -99,7 +97,7 @@ return function(
 				"Want an early peek at what's in store, or learn more about the process?",
 				button {
 					href = site_url "dev",
-					text = "How Daydream is developed"
+					text = "How Cavey is developed"
 				}
 			},
 			

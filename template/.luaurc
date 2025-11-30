@@ -1,7 +1,7 @@
 {
 	"aliases": {
-		"components": "components",
-		"pages": "pages",
+		"components": "./components",
+		"pages": "./pages",
 		"config": "../config",
 		"util": "../sitegen/util"
 	}

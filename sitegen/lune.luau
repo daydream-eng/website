@@ -1,8 +1,8 @@
 local site_map = require("@template/site_map")
 local flatten = require("@util/flatten")
 local build_scripts = require("@config/build_scripts")
-local fs = require("@lune/fs" :: any)
-local process = require("@lune/process" :: any)
+local fs = require("@lune/fs")
+local process = require("@lune/process")
 
 pcall(fs.removeDir, "docs")
 fs.copy("static", "docs")
@@ -22,7 +22,7 @@ for _, location in site_map do
 end
 
 for _, script in build_scripts do
-	local result = process.spawn("lune", { "run", "build_scripts/" .. script })
+	local result = process.exec("lune", { "run", "build_scripts/" .. script })
 	if not result.ok then
 		print("Error in build script:", script)
 		print(result.stderr)
