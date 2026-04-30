@@ -84,7 +84,7 @@ return function(
 			creative style and I am very particular about what passes my quality bar. Simply put: these tools don't produce anything worth incorporating, so it's \
 			still easy for me to reject these outright. They are not a part of my process. I still draw every pixel, tune every FM synth, and play every piano \
 			note by hand, just like I always have done. To some degree, I suspect these will never be good enough for Cavey, as the human touch in the music and the \
-			art is what makes it uniquely compelling, even in its alien soundscape and with its clean pixel style.",
+			art is what makes it uniquely compelling, even in its alien soundscape and with its clean pixel style."
 		}
 	}
 end
