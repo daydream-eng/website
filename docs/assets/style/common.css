@@ -205,6 +205,14 @@ a {
 	}
 }
 
+main > img {
+	width: 100%;
+
+	&.photo {
+		image-rendering: auto;
+	}
+}
+
 a.button,
 button {
 	--button-1: var(--accent);
