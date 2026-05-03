@@ -227,7 +227,7 @@ button {
 	color: black;
 	padding: 0.5em 2em;
 	font: inherit;
-	font-variation-settings: 'LITE' 0.8;
+	/* font-variation-settings: 'LITE' 0.8; */
 	cursor: var(--cursor-hand-point);
 
 	border: 0.125em solid rgba(0, 0, 0, 0.6);
