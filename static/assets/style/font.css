@@ -1,6 +1,9 @@
 @font-face {
-  font-family: 'Voxic';
-  src: url('../font/voxic.ttf')  format('truetype')
+    font-family: 'Neovoxic';
+    src: url('../font/Neovoxic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
 }
 
 * {
@@ -8,8 +11,9 @@
 }
 
 body {
-	font-family: "Voxic", system-ui;
+	font-family: "Neovoxic", system-ui;
 	line-height: 2;
+	font-variation-settings: 'LITE' 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
