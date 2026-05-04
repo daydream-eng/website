@@ -2,6 +2,11 @@
 	display: flex;
 	gap: 1em;
 	width: 100%;
+	flex-wrap: wrap;
+
+	& > * {
+		flex-shrink: 0;
+	}
 
 	& > input[type=email] {
 		max-width: 30rem;
