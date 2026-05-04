@@ -326,6 +326,7 @@ footer {
 			text-align: right;
 			gap: 0.5em;
 			& > p {
+				line-height: 1;
 				margin: 0;
 			}
 			& > .logo-image {

@@ -10,6 +10,7 @@ local section = html_box "section"
 local h3 = html_text "h3"
 local p = html "p"
 local a = html "a"
+local small = html_box "small"
 
 return function(
 	props: {}
@@ -28,10 +29,12 @@ return function(
 			logo {},
 			p {
 				children = {
-					"© Daniel P H Fox. All rights reserved.<br>",
-					a {
-						href = site_url "ai-policy",
-						text = "Cavey's AI policy"
+					small {
+						"© Daniel P H Fox. All rights reserved. Trademarks owned by other entities are reproduced here under fair use and are not affiliated with Cavey in any way.<br>",
+						a {
+							href = site_url "ai-policy",
+							text = "Cavey's AI policy"
+						},
 					}
 				}
 			 }

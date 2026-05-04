@@ -30,7 +30,8 @@ return function(
 		},
 		header = {
 			h1 "Always dig down.",
-			p "Cavey is a revival of the cave-spelunking heart of 2010-era voxel games.",
+			"<!-- Your AI DMCA slop bots leave me no choice. -->",
+			p(`Cavey reimagines the chill cave-spelunking heart of Beta &zwj;&#x4D&zwj;&#x69&zwj;&#x6E&zwj;&#x65&zwj;&#x63&zwj;&#x72&zwj;&#x61&zwj;&#x66&zwj;&#x74.`),
 			p "No combat, no quests, just the core loop: dig kilometres deep, layer buffs from your tools, gems, and cooking, and perfect a productive, ever-expanding base with every haul.",
 			p_box {
 				"The ",
@@ -48,7 +49,7 @@ return function(
 			newsletter_signup {
 				placeholder = "Enter your email address",
 				action = "Get monthly news"
-			}
+			},
 		},
 		main = {
 			h2 "Caves that go kilometres deep.",
@@ -74,7 +75,7 @@ return function(
 			
 			h2 "Build because you want to.",
 			p "Up top, Cavey leaves you alone. There are no quests, no dungeons, no NPCs to please. Just you, your materials, and \
-				the awesome, alien terrain Beta Minecraft was known for.",
+				the awesome, alien terrain Beta was known for.",
 			p "Building works at sub-metre resolution, so you can shape fine details like never before. Coloured lighting mixes \
 				and bounces across surfaces in real time. Multiple objects fit in a single block, so rooms hold detail most games flatten.",
 				
