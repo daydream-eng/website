@@ -5,7 +5,10 @@ local input = html "input"
 local button = html "button"
 
 return function(
-	props: {}
+	props: {
+		placeholder: string?,
+		action: string?
+	}
 )
 	return form {
 		class = "newsletter-signup",
@@ -16,7 +19,7 @@ return function(
 			input {
 				type = "email",
 				name = "fields[email]",
-				placeholder = "Email address",
+				placeholder = props.placeholder or "Email address",
 				autocomplete = "email",
 				required = true
 			},
@@ -32,7 +35,7 @@ return function(
 			},
 			button {
 				type = "submit",
-				text = "Join"
+				text = props.action or "Join"
 			}
 		}
 	}

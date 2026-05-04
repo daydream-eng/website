@@ -1,6 +1,9 @@
 .newsletter-signup {
 	display: flex;
 	gap: 1em;
-	width: calc(100vw - var(--readable-padding));
-	max-width: 40em;
+	width: 100%;
+
+	& > input[type=email] {
+		max-width: 30rem;
+	}
 }

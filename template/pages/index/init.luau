@@ -5,81 +5,99 @@ local site_url = require("@util/site_url")
 local common_urls = require("@config/common_urls")
 local document = require("@components/document")
 local button = require("@components/button")
-local gallery_with_prelude = require("@pages/index/gallery_with_prelude")
 local gallery = require("@components/gallery")
+local newsletter_signup = require("@pages/news/newsletter_signup")
 
 local h1 = html_text "h1"
 local h2 = html_text "h2"
 local p = html_text "p"
 local a = html "a"
 local p_box = html_box "p"
+local link = html "link"
+local script = html "script"
 
 return function(
 	props: {}
 )
 	return document {
 		site_nav = { current_page = "index" },
-		background_name = "aerial_cave",
+		background_name = "cave_looking_out",
+		extra_head = {
+			link { rel = "stylesheet", href = site_url "assets/style/newsletter_signup.css" },
+			link { id = "newsletter-error-page", href = site_url "news/fail" },
+			link { id = "newsletter-success-page", href = site_url "news/success" },
+			script { defer = true, src = site_url "assets/scripts/newsletter_signup.js" }
+		},
 		header = {
-			h1 "Dig down, build out, craft up.",
-			p "Get creative with your tools to mine impossibly deep caves, and manoeuvre to master environmental hazards.",
-			p "Build an ever-evolving base of operations in a peaceful extravagant overworld, and thrive by unfolding rich, complex crafting progressions.",
-			button {
-				jumbo = true,
-				href = site_url "news",
-				text = "Get monthly news updates"
+			h1 "Always dig down.",
+			p "Cavey is the chill cave-spelunking heart of Beta Minecraft, finished as its own game.",
+			p "No combat, no quests, just the core loop: dig kilometres deep, layer buffs from your tools, gems, and cooking, and perfect a productive, ever-expanding base with every haul.",
+			p_box {
+				"The 2026 alpha will be announced in the ",
+				a {
+					href = site_url "news",
+					text = "newsletter"
+				},
+				"."
+			},
+			newsletter_signup {
+				placeholder = "Enter your email address",
+				action = "Get monthly news"
 			}
 		},
 		main = {
-			h2 "Two layers interwoven.",
-			p "Explore a gorgeous infinite world full of exciting terrain and sprawling 3D networks of caves. \
-			Beneath the surface, master the massive subterranea and its extreme shapes, \
-			tuned to generate fantastical chambers filled with stunning magma pools and eye-catching resources.",
+			h2 "Caves that go kilometres deep.",
+			p "Beneath a quiet surface, the ground opens into massive chambers lit only by the glow of magma and the glint of crystals. \
+				The deeper you go, the rarer the materials - but you'll have to pay attention to find them.",
+			p "Nothing's hunting you down here. The real hazards are long falls, explosive veins, fire, drowning, and \
+				darkness that punishes you for under-packing torches.",
 				
-			h2 "Survive and thrive.",
-			p "Plant your stake with an ever-evolving base of operations, built from the blocks you find in the world. \
-			Assemble a creative range of workstations to unfold multiple rich, complex crafting progressions. \
-			Expand your abilities by investing in tools that change the way you interact with the world.",
+			h2 "Progression that doesn't end early.",
+			p "Cavey was made for the players who hit diamond and stopped. Your crafting splits into multiple parallel \
+				progressions that stack up, giving you more reasons to build your base and head back underground.", 
+			p "Tools come with trade-offs: more durability, wider block range, or special effects like magnetism. \
+				Gemstones add fortune effects that boost block drops. Cooked food doesn't just refill you; it stacks temporary \
+				buffs on top — extra speed, mining impact, damage absorption, or even carrots that let you see in the dark.",
 
 			gallery {
 				images = {
-					{ src = site_url "assets/images/galleries/morning_lake.jpg", alt = "A lake in the morning light" },
 					{ src = site_url "assets/images/galleries/deep_cave.jpg", alt = "A deep cave lit by offscreen magma" },
-					{ src = site_url "assets/images/galleries/water_reflection.jpg", alt = "Water reflecting a shore and cliff face" }
-				}
-			},
-			
-			h2 "Think on your feet.",
-			p "Everything interacts. Use clever blocks, movement and material interactions \
-			to master environmental hazards and navigate a world that's larger than you. \
-			Keep your eyes open and select your tools wisely to adapt to any situation you find yourself in.",
-				
-			h2 "Shape your creations.",
-			p "Use smaller, more detailed blocks to build anything you can imagine. \
-			Paint the world in coloured lighting that realistically mixes with every surface. \
-			Mix-and-match blocks in ways you've never done before, with multiple objects per block.",
-			
-			gallery {
-				images = {
-					{ src = site_url "assets/images/galleries/cave_looking_out.jpg", alt = "Looking out from a cave entrance" },
-					{ src = site_url "assets/images/galleries/beach_sunset.jpg", alt = "A beach at sunset" },
+					{ src = site_url "assets/images/galleries/aerial_cave.jpg", alt = "Looking out from a cave entrance" },
 					{ src = site_url "assets/images/galleries/morning_cliff.jpg", alt = "Steep hills bathed in morning sun" }
 				}
 			},
+			
+			h2 "Build because you want to.",
+			p "Up top, Cavey leaves you alone. There are no quests, no dungeons, no NPCs to please. Just you, your materials, and \
+				the awesome, alien terrain Beta Minecraft was known for.",
+			p "Building works at sub-metre resolution, so you can shape fine details like never before. Coloured lighting mixes \
+				and bounces across surfaces in real time. Multiple objects fit in a single block, so rooms hold detail most games flatten.",
+				
+			h2 "Solo or with a few friends.",
+			p "Cavey supports co-op for small groups. Bring a couple of people and get to work digging, and build your home base together.",
+			p "Or, play alone and keep the world to yourself. Steam Deck support is first-class, so you can settle into a long descent on \
+				the couch.",
+			
+			gallery {
+				images = {
+					{ src = site_url "assets/images/galleries/morning_lake.jpg", alt = "A lake in the morning light" },
+					{ src = site_url "assets/images/galleries/water_reflection.jpg", alt = "Water reflecting a shore and cliff face" },
+					{ src = site_url "assets/images/galleries/beach_sunset.jpg", alt = "A beach at sunset" }
+				}
+			},
 
-			h2 "Powered by the Cavey Engine.",
+			h2 "Engineered all the way down.",
 			p_box {
-				"Cavey runs on the fully custom-built ",
+				"Cavey runs on its own, fully custom-built ",
 				a {
 					href = site_url "dev",
 					text = "Cavey Engine"
 				}, 
-				" - hyper-optimised for massive voxel worlds, high-quality graphics, and real-time low latency interactions.",
+				" - uniquely designed to handle massive voxel worlds.",
 			},
-			p "Play the full Cavey experience on a wide range of hardware, including dedicated Steam Deck support \
-			   for casual play on-the-go.",
+			p "Cave systems generate without seams, lighting stays smooth as you move, and the simulation handles whatever you throw at it.",
 
-			h2 "Follow along with development.",
+			h2 "Watch Cavey get built.",
 			p_box {
 				"Cavey is being developed openly ",
 				a {
@@ -94,7 +112,7 @@ return function(
 				"."
 			},
 			p_box {
-				"Want an early peek at what's in store, or learn more about the process?",
+				"Want an early peek at what's in store, or want to learn more about the process?",
 				button {
 					href = site_url "dev",
 					text = "How Cavey is developed"

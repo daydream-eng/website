@@ -69,7 +69,7 @@ body {
 }
 
 body {
-	background-image: var(--background);
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent), var(--background);
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
@@ -78,8 +78,8 @@ body {
 	background-color: black;
 	color: white;
 
-	--readable-padding: max(2rem, calc(50vw - 50rem));
-	--current-width: min(calc(100vw - 4rem), 100rem);
+	--readable-padding: max(2rem, calc(50vw - 35rem));
+	--current-width: min(calc(100vw - 4rem), 70rem);
 
 	@media screen and (max-width: 80rem) {
 		--readable-padding: 1rem;
@@ -98,19 +98,20 @@ body {
 }
 
 header {
-	max-width: max-content;
+	/* max-width: max-content; */
 	margin-inline: auto;
 	--vertical-align: max(2em, calc(30svh - 15em));
 	margin-top: calc(5em + var(--vertical-align));
 	margin-bottom: var(--vertical-align);
 	padding: 2em;
+	padding-inline: var(--readable-padding);
 
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: start;
 	justify-content: center;
 
-	text-align: center;
+	text-wrap: balance;
 }
 
 body > header > *,
@@ -193,7 +194,7 @@ p > * {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
 
 a {
