@@ -30,7 +30,7 @@ return function(
 		},
 		header = {
 			h1 "Always dig down.",
-			p "Cavey is the chill cave-spelunking heart of Beta Minecraft, finished as its own game.",
+			p "Cavey is a revival of the cave-spelunking heart of 2010-era voxel games.",
 			p "No combat, no quests, just the core loop: dig kilometres deep, layer buffs from your tools, gems, and cooking, and perfect a productive, ever-expanding base with every haul.",
 			p_box {
 				"The ",
