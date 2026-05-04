@@ -33,7 +33,12 @@ return function(
 			p "Cavey is the chill cave-spelunking heart of Beta Minecraft, finished as its own game.",
 			p "No combat, no quests, just the core loop: dig kilometres deep, layer buffs from your tools, gems, and cooking, and perfect a productive, ever-expanding base with every haul.",
 			p_box {
-				"The 2026 alpha will be announced in the ",
+				"The ",
+				a {
+					href = site_url "dev",
+					text = "2026 alpha"
+				},
+				" will be announced in the ",
 				a {
 					href = site_url "news",
 					text = "newsletter"
@@ -109,15 +114,12 @@ return function(
 					href = site_url "news",
 					text = "get monthly updates to your inbox"
 				},
-				"."
-			},
-			p_box {
-				"Want an early peek at what's in store, or want to learn more about the process?",
+				".",
 				button {
 					href = site_url "dev",
-					text = "How Cavey is developed"
+					text = "View the roadmap"
 				}
-			},
+			}
 			
 		}
 	}

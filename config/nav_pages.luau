@@ -9,11 +9,6 @@ return {
 	{
 		id = "dev",
 		href = site_url "dev",
-		title = "Development"
-	},
-	{
-		id = "ost",
-		href = site_url "ost",
-		title = "Soundtrack"
+		title = "Roadmap"
 	}
 }

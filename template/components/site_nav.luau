@@ -31,7 +31,7 @@ return function(
 
 		button {
 			href = site_url "news",
-			text = "Newsletter"
+			text = "News"
 		}
 	}
 end
