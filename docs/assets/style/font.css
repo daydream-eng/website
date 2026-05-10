@@ -16,6 +16,13 @@ body {
 	font-variation-settings: 'LITE' 0;
 }
 
+/* WebKit bug with LITE - disable it by force */
+@supports (font: -apple-system-body) {
+    * {
+		font-variation-settings: 'LITE' 0 !important;
+	}
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 
